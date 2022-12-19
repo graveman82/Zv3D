@@ -1,0 +1,35 @@
+//--------------------------------------------------
+/* Structure of source code location on hard disk */
+//--------------------------------------------------
+
+(1) Use Camel Case style for folder names. For example "Core".
+(2) File name prefix: "Zv3D".
+
+//--------------------------------------------------
+/* Code */
+//--------------------------------------------------
+(3) Header guard.
+Use full path from folder located in "inc" like:
+#ifndef ZV3D_CORE_COMMON_COMPILER_H
+#define ZV3D_CORE_COMMON_COMPILER_H
+// code is here
+#endif // ZV3D_CORE_COMMON_COMPILER_H
+
+(4) Copyright and info header.
+// Zv3D Engine. (C) 2012-2022 Marat Sungatullin (aka graveman, aka mrsung)
+//
+// License: double license GPLv3 and zlib (see "Zv3DLicense.txt").
+// 
+// Purpose: compiler detection.
+/*
+	dd-month-yyyy	nickname "what is done"
+*/
+
+so, its same until "Purpose: ..." string.
+
+(5) Macro prefix: ZVD_ (no ZV3D_ fo shortness)
+
+(6) Block of code visual delimiter.
+Use line of hyphen 80 chars long:
+//-----------------------------------------------------------------------------
+// Some description...
