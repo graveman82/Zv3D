@@ -17,6 +17,10 @@
 #   define ZVD_COMPILER_GNUC_VERSION (__GNUC__ * 10000 \
                                     + __GNUC_MINOR__ * 100 \
                                     + __GNUC_PATCHLEVEL__)
+#	if ZVD_COMPILER_GNUC_VERSION < 80100
+#		error "you need gcc 8.1 or higher"
+#	endif
+
 #elif defined (_MSC_VER)
 #	if (_MSC_VER < 1310)
 #		error "you need VC 2003.Net 7.1 or higher"
