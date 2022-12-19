@@ -33,3 +33,6 @@ so, its same until "Purpose: ..." string.
 Use line of hyphen 80 chars long:
 //-----------------------------------------------------------------------------
 // Some description...
+
+(7) Types.
+(7.1) Use "Zvd" prefix and "_t" suffix. CamelCase. 
