@@ -18,15 +18,12 @@
 	typedef __int8					ZvdInt8_t;
 	typedef __int16					ZvdInt16_t;
 	typedef __int32					ZvdInt32_t;
-#	ifdef ZVD_OS_64
-		typedef __int64				ZvdInt64_t;
-#	endif
+	typedef __int64					ZvdInt64_t;
+
 	typedef unsigned __int8			ZvdUInt8_t;
 	typedef unsigned __int16		ZvdUInt16_t;
 	typedef unsigned __int32		ZvdUInt32_t;
-#	ifdef ZVD_OS_64
-		typedef unsigned __int64	ZvdUInt64_t;
-#	endif
+	typedef unsigned __int64		ZvdUInt64_t;
 
 #elif defined ZVD_COMPILER_GNUC
 #   include <stdint.h>
@@ -54,10 +51,10 @@ typedef ZvdUInt8_t ZvdByte_t;
 /// 16-bit word.
 typedef ZvdUInt16_t ZvdWord_t;
 /// 32-bit index type.
-typedef ZvdUInt32_t ZvdIdx_t;
+typedef ZvdUInt32_t ZvdIndex_t;
 /// 32-bit size type.
 typedef ZvdUInt32_t ZvdSize_t;
 
-const ZvdIdx_t kZVD_NO_INDEX = ZvdIdx_t(-1);
+const ZvdIndex_t kZVD_NO_INDEX = ZvdIndex_t(-1);
 
 #endif // ZV3D_CORE_COMMON_INTDEFS_H

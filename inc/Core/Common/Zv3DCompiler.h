@@ -22,12 +22,13 @@
 #	endif
 
 #elif defined (_MSC_VER)
-#	if (_MSC_VER < 1310)
-#		error "you need VC 2003.Net 7.1 or higher"
-#	endif
 #	define ZVD_COMPILER_MSVC
 #	define ZVD_COMPILER_MSVC_VERSION _MSC_VER
-#	define ZVD_COMPILER_MSVC_NET20037X1 1310
+#	define ZVD_COMPILER_MSVC2019 1921
+#	if (ZVD_COMPILER_MSVC_VERSION < ZVD_COMPILER_MSVC2019)
+#		error "you need VC 2019 (16.1) or higher"
+#	endif
+
 
 #else // error
 #   if !(defined(ZVD_COMPILER_GNUC) || \

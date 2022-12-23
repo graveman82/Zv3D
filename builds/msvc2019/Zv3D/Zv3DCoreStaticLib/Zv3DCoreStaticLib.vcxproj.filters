@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{49b9acac-8f0c-4e33-864a-1e121ec197ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{f7b4a18e-5b60-46a5-91ae-da1b91ea551f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Common">
+      <UniqueIdentifier>{ef8227e3-f3d0-4313-a2a7-5de7c41a2cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Common">
+      <UniqueIdentifier>{59ddfa2c-9d60-4b30-acd1-68ea6f31421a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Containers">
+      <UniqueIdentifier>{73eda7bb-0526-4bfd-a75e-923112604713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Containers">
+      <UniqueIdentifier>{2c39704e-f283-4b37-ba4e-1cab9b9a3295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\System">
+      <UniqueIdentifier>{5457a8ee-a3ac-476b-9420-5b28c93bf457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\System">
+      <UniqueIdentifier>{9dbd2c68-6691-47f1-8e0d-bfe6c1cf6e25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\FileIO">
+      <UniqueIdentifier>{b0f046e8-d18e-4521-b648-d1d8056eee32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\FileIO">
+      <UniqueIdentifier>{43dc1e8e-0422-44dd-8c8b-0a84844e5c59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DAssert.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DBaseTypes.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DCompiler.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DIntDefs.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DPlatform.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp">
+      <Filter>Source Files\Core\Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
