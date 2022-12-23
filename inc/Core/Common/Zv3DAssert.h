@@ -48,12 +48,14 @@
 // char type for assert messages
 #ifdef ZVD_DEBUG_CHARTYPE_WIDE
 #   define ZVD_ASSERT_CHARTYPE wchar_t
+#   define ZVD_ASSERT_TEXT(s) ZVD_WIDECHAR(s)
 #else
 #   define ZVD_ASSERT_CHARTYPE char
+#   define ZVD_ASSERT_TEXT(s) ZVD_NARROWCHAR(s)
 #endif
 
-#define ZVD_ASSERT_TEXT(s) ZVD_DEBUG_STRINGIFY(s)
-#define ZVD_DEBUG_TEXT(s) ZVD_DEBUG_STRINGIFY(s)
+
+#define ZVD_DEBUG_TEXT(s) ZVD_ASSERT_TEXT(s)
 #define ZVD_DEBUG_EMPTY_TEXT ZVD_DEBUG_TEXT("")
 
 namespace zvd
@@ -108,10 +110,10 @@ namespace zvd
 //-----------------------------------------------------------------------------
 // Fixing assert failed point (Don't use it directly!)
 
-#define ZVD_FIX_ASSERT_POINT(exp) { if (!(exp)) { zvd::debug::AssertPoint::Instance().Set(ZVD_DEBUG_STRINGIFY(exp), ZVD_FILE_AND_LINE); } }
+#define ZVD_FIX_ASSERT_POINT(exp) { if (!(exp)) { zvd::debug::AssertPoint_t::Instance().Set(ZVD_DEBUG_STRINGIFY(exp), ZVD_FILE_AND_LINE); } }
 
 //
-#   define ZVD_ASSERT_IMPL_NOMSG(exp)               { if (!(exp)) { ZVD_FIX_ASSERT_POINT(exp); zvd::debug::OutputAssertMessage(""                            ); ZVD_DEBUG_BP(); } }
+#   define ZVD_ASSERT_IMPL_NOMSG(exp)               { if (!(exp)) { ZVD_FIX_ASSERT_POINT(exp); zvd::debug::OutputAssertMessage(ZVD_DEBUG_EMPTY_TEXT          ); ZVD_DEBUG_BP(); } }
 #   define ZVD_ASSERT_IMPL(exp,fmt)                 { if (!(exp)) { ZVD_FIX_ASSERT_POINT(exp); zvd::debug::OutputAssertMessage(fmt                           ); ZVD_DEBUG_BP(); } }
 #   define ZVD_ASSERT_IMPL1(exp,fmt,a1)             { if (!(exp)) { ZVD_FIX_ASSERT_POINT(exp); zvd::debug::OutputAssertMessage(fmt, (a1)                     ); ZVD_DEBUG_BP(); } }
 #   define ZVD_ASSERT_IMPL2(exp,fmt,a1,a2)          { if (!(exp)) { ZVD_FIX_ASSERT_POINT(exp); zvd::debug::OutputAssertMessage(fmt, (a1), (a2)               ); ZVD_DEBUG_BP(); } }

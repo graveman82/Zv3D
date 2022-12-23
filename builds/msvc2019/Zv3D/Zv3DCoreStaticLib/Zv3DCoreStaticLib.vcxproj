@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\..\..\..\Zv3DBin\Win32$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)..\..\..\..\Zv3DLib\Win32$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -161,10 +161,12 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DPlatform.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h" />
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp" />
+    <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp" />
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

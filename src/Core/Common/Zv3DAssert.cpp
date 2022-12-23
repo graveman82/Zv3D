@@ -55,7 +55,7 @@ namespace zvd
             strMsg += AssertPoint_t::Instance().Exp();
             strMsg += ZVD_ASSERT_TEXT("\" failed in \"");
             strMsg += AssertPoint_t::Instance().FileAndLine();
-            strMsg += ZVD_ASSERT_TEXT(".\n");
+            strMsg += ZVD_ASSERT_TEXT(".\"\n");
             AssertPoint_t::Instance().Clear();
 
             if (fmt)

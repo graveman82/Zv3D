@@ -43,6 +43,12 @@
     <Filter Include="Header Files\Core\FileIO">
       <UniqueIdentifier>{43dc1e8e-0422-44dd-8c8b-0a84844e5c59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core\Test">
+      <UniqueIdentifier>{32c954b7-de88-49ae-864a-a95077b644ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Test">
+      <UniqueIdentifier>{37c8c04e-ad58-4b9a-b03d-a08f9a4d5546}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h">
@@ -69,6 +75,9 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h">
       <Filter>Header Files\Core\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h">
+      <Filter>Header Files\Core\Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp">
@@ -76,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp">
       <Filter>Source Files\Core\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp">
+      <Filter>Source Files\Core\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
