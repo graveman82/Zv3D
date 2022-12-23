@@ -78,6 +78,12 @@
     <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h">
       <Filter>Header Files\Core\Test</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DError.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DByteUtils.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp">
       <Filter>Source Files\Core\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DError.cpp">
+      <Filter>Source Files\Core\Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
