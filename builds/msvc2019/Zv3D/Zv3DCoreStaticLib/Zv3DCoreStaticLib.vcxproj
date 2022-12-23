@@ -165,6 +165,9 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DPodDynamicArray.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\MathLib\Zv3DMathSmallUtils.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DMemGrowStrategies.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DSimpleMemoryAllocator.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h" />
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h" />
   </ItemGroup>
@@ -172,6 +175,7 @@
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DDebugUtils.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DError.cpp" />
+    <ClCompile Include="..\..\..\..\src\Core\Memory\Zv3DSimpleMemoryAllocator.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp" />
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp" />
   </ItemGroup>

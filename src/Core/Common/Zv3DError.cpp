@@ -84,10 +84,9 @@ const ZvdChar_t* ZvdErrorList_t::GetText(ZvdErrorList_t::Code code)
 //-----------------------------------------------------------------------------
 void ZvdErrorInfo_t::Format(ZvdResultStatus_t status, ZvdErrorCategory_t cat, ZvdErrorList_t::Code code)
 {
-	ZvdRetVal_t retVal;
-	ZVD_BYTE0(retVal) = status;
-	ZVD_BYTE1(retVal) = static_cast<ZvdByte_t>(cat);
-	ZVD_WORD1(retVal) = static_cast<ZvdUInt16_t>(code);
+	ZVD_BYTE0(m_retVal) = status;
+	ZVD_BYTE1(m_retVal) = static_cast<ZvdByte_t>(cat);
+	ZVD_WORD1(m_retVal) = static_cast<ZvdUInt16_t>(code);
 
 }
 

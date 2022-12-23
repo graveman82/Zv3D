@@ -55,6 +55,9 @@
     <Filter Include="Source Files\Core\Memory">
       <UniqueIdentifier>{6f3379fb-b0e5-4d01-b4fa-3bbb428d7224}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core\MathLib">
+      <UniqueIdentifier>{f3dcc6c7-ad40-4002-8c45-02c31064f3ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h">
@@ -96,6 +99,15 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DDebugUtils.h">
       <Filter>Header Files\Core\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DSimpleMemoryAllocator.h">
+      <Filter>Header Files\Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DMemGrowStrategies.h">
+      <Filter>Header Files\Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\MathLib\Zv3DMathSmallUtils.h">
+      <Filter>Header Files\Core\MathLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp">
@@ -112,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DDebugUtils.cpp">
       <Filter>Source Files\Core\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Core\Memory\Zv3DSimpleMemoryAllocator.cpp">
+      <Filter>Source Files\Core\Memory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

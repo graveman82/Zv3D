@@ -11,4 +11,3 @@
 // TODO: reference additional headers your program requires here
 #include "Core/Common/Zv3DCompiler.h"
 #include "Core/Common/Zv3DPlatform.h"
-#include "Core/Common/Zv3DAssert.h"

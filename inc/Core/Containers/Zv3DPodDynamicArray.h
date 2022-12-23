@@ -15,7 +15,7 @@
 #include "Core/Common/Zv3DError.h"
 
 #include <algorithm>
-#include <exception>
+#include <stdexcept>
 
 //-----------------------------------------------------------------------------
 //
@@ -29,6 +29,7 @@ struct ZvdToNotConstructTag
 	enum { kValue = 0 };
 };
 
+//-----------------------------------------------------------------------------
 template<typename T, typename TMemAllocator, typename TGrowStrategy, typename TToConstruct = ZvdToConstructTag>
 class ZvdPodDynamicArray_t
 {
@@ -229,6 +230,7 @@ private:
 		void* pNewMem{};
 		ZvdRetVal_t retVal = alcr.Allocate(&pNewMem, nRequiredBytes);
 		ZvdErrorInfo_t errorInfo(retVal);
+		auto status = errorInfo.Status();
 		if (errorInfo.Status() != kZvdOk)
 		{
 			return retVal;

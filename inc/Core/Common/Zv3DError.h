@@ -23,9 +23,9 @@ enum ZvdResultStatus_t : ZvdByte_t
 	kZvdUnk = 255,			///< nothing known about some error case
 	kZvdNone = 0,			///< no error, but nothing had happened
 	kZvdOk = 1,				///< success
-	kZvdFail = 2,			///< operation failed (seriouos case, app can be crashed)
+	kZvdFatal = 2,			///< operation failed (seriouos case, app can be crashed)
 	kZvdWarn,				///< success, but there are some warnings
-	kZvdErr,				///< error case that can be solved
+	kZvdError,				///< error case that can be solved
 	kZvdCancel,				///< operation canceled
 	kZvdResultStatusCount = 7
 };
