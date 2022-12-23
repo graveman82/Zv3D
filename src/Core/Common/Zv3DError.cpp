@@ -18,7 +18,10 @@ namespace zvd
 	{
 		static const ZvdChar_t* s_textualDesc[ZvdErrorList_t::kCount] =
 		{
-			ZVD_T("Invalid arguments passed")
+			ZVD_T("Success"),
+			ZVD_T("Invalid arguments passed"),
+			ZVD_T("Not enough memory in system"),
+			ZVD_T("Out of range"),
 		};
 	}
 	

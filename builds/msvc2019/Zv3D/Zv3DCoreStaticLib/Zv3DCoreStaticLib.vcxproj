@@ -158,16 +158,19 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DBaseTypes.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DByteUtils.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DCompiler.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DDebugUtils.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DError.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DIntDefs.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DPlatform.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DPodDynamicArray.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h" />
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp" />
+    <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DDebugUtils.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DError.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp" />
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp" />

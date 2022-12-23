@@ -53,7 +53,10 @@ class ZvdErrorList_t
 public:
 	enum Code : ZvdUInt16_t
 	{
+		kSuccess,
 		kInvalidArg,
+		kNoMemory,
+		kOutOfRange,
 		kCount
 	};
 

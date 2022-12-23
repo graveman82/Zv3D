@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Core\Test">
       <UniqueIdentifier>{37c8c04e-ad58-4b9a-b03d-a08f9a4d5546}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core\Memory">
+      <UniqueIdentifier>{36743618-fd4e-4a19-bb9a-295a4c55c4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Memory">
+      <UniqueIdentifier>{6f3379fb-b0e5-4d01-b4fa-3bbb428d7224}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h">
@@ -84,6 +90,12 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DByteUtils.h">
       <Filter>Header Files\Core\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DPodDynamicArray.h">
+      <Filter>Header Files\Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DDebugUtils.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp">
@@ -96,6 +108,9 @@
       <Filter>Source Files\Core\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DError.cpp">
+      <Filter>Source Files\Core\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DDebugUtils.cpp">
       <Filter>Source Files\Core\Common</Filter>
     </ClCompile>
   </ItemGroup>
