@@ -39,23 +39,64 @@ const ZvdChar_t* ZvdToString(ZvdResultStatus_t status)
 		ZVD_T("Error"),
 		ZVD_T("Cancel")
 	};
-	if (status == kZvdUnk)
-	{
-		return textualDesc[0];
-	}
-	return textualDesc[status + 1];
+	
+	return textualDesc[status];
 }
 
-bool ZvdIsOk(ZvdResultStatus_t status)
+ZvdResultStatus_t ZvdErrorStatus(ZvdRetVal_t retVal)
 {
+	return static_cast<ZvdResultStatus_t>(ZVD_BYTE0(retVal));
+}
+
+ZvdErrorEval_t::ZvdErrorEval_t(ZvdRetVal_t retVal) : m_retVal{ retVal }
+{ 
+	Evaluate();
+}
+
+ZvdErrorEval_t& ZvdErrorEval_t::operator=(ZvdRetVal_t retVal)
+{
+	if (m_retVal == retVal)
+		return *this;
+	m_retVal = retVal;
+	Evaluate();
+	return *this;
+}
+
+bool ZvdErrorEval_t::Ok() const
+{
+	return (0 != (m_evalFlags & 1));
+}
+
+bool ZvdErrorEval_t::HasWarnings() const
+{
+	return (0 != (m_evalFlags & 4));
+}
+
+bool ZvdErrorEval_t::Critical() const
+{
+	return (0 != (m_evalFlags & 2));
+}
+
+void ZvdErrorEval_t::Evaluate()
+{
+	ZvdResultStatus_t status = ZvdErrorStatus(m_retVal);
 	switch (status)
 	{
-	case kZvdOk:
-	case kZvdWarn:
-	case kZvdNone:
-		return true;
-	default:
-		return false;
+		case kZvdOk:
+		case kZvdWarn:
+		case kZvdNone:
+		{
+			m_evalFlags |= 1;
+			if (kZvdWarn == status)
+				m_evalFlags |= 4;
+			break;
+		}
+		case kZvdUnk:
+		case kZvdFatal:
+		{
+			m_evalFlags |= 2;
+			break;
+		}
 	}
 }
 
@@ -74,6 +115,11 @@ const ZvdChar_t* ZvdToString(ZvdErrorCategory_t cat)
 	return textualDesc[static_cast<ZvdSize_t>(cat)];
 }
 
+ZvdRetVal_t ZvdMakeOk(ZvdErrorCategory_t cat)
+{
+	return ZvdErrorInfo_t(kZvdOk, cat, ZvdErrorList_t::kSuccess).RetVal();
+}
+
 //-----------------------------------------------------------------------------
 const ZvdChar_t* ZvdErrorList_t::GetText(ZvdErrorList_t::Code code)
 {
@@ -82,18 +128,23 @@ const ZvdChar_t* ZvdErrorList_t::GetText(ZvdErrorList_t::Code code)
 }
 
 //-----------------------------------------------------------------------------
-void ZvdErrorInfo_t::Format(ZvdResultStatus_t status, ZvdErrorCategory_t cat, ZvdErrorList_t::Code code)
-{
-	ZVD_BYTE0(m_retVal) = status;
-	ZVD_BYTE1(m_retVal) = static_cast<ZvdByte_t>(cat);
-	ZVD_WORD1(m_retVal) = static_cast<ZvdUInt16_t>(code);
+ZvdErrorInfo_t::ZvdErrorInfo_t(ZvdResultStatus_t status, ZvdErrorCategory_t cat, ZvdErrorList_t::Code code)
+{ 
+	Format(m_retVal, status, cat, code); 
+}
 
+//-----------------------------------------------------------------------------
+void ZvdErrorInfo_t::Format(ZvdRetVal_t& retVal, ZvdResultStatus_t status, ZvdErrorCategory_t cat, ZvdErrorList_t::Code code)
+{
+	ZVD_BYTE0(retVal) = status;
+	ZVD_BYTE1(retVal) = static_cast<ZvdByte_t>(cat);
+	ZVD_WORD1(retVal) = static_cast<ZvdUInt16_t>(code);
 }
 
 //-----------------------------------------------------------------------------
 ZvdResultStatus_t ZvdErrorInfo_t::Status() const
 {
-	return static_cast<ZvdResultStatus_t>(ZVD_BYTE0(m_retVal));
+	return ZvdErrorStatus(m_retVal);
 }
 
 //-----------------------------------------------------------------------------

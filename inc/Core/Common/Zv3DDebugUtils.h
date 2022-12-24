@@ -17,9 +17,13 @@
 #if (ZVD_DEBUG_LEVEL >= ZVD_DEBUG_LEVEL_HIGH)
 	void ZvdAssertNotNull(void* p);
 	void ZvdAssertNull(void* p);
+	void ZvdAssertTrue(bool v);
+	void ZvdAssertFalse(bool v);
 #else
 #	define ZvdAssertNotNull(p) ((void) 0)
 #	define ZvdAssertNull(p) ((void) 0)
+#	define ZvdAssertTrue(v) ((void) 0)
+#	define ZvdAssertFalse(v) ((void) 0)
 #endif
 
 

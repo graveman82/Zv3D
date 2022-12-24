@@ -22,4 +22,14 @@ void ZvdAssertNull(void* p)
 {
 	ZVD_ASSERT_HIGH_NOMSG(nullptr == p);
 }
+
+void ZvdAssertTrue(bool v)
+{
+	ZVD_ASSERT_HIGH_NOMSG(v);
+}
+
+void ZvdAssertFalse(bool v)
+{
+	ZVD_ASSERT_HIGH_NOMSG(!v);
+}
 #endif
