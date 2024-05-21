@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -125,8 +125,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -164,20 +165,22 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DPlatform.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringUtils.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DDynamicArray.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DPodDynamicArray.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DString.h" />
     <ClInclude Include="..\..\..\..\inc\Core\MathLib\Zv3DMathSmallUtils.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DMemGrowStrategies.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Memory\Zv3DSimpleMemoryAllocator.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Test\Zv3DTestUtils.h" />
-    <ClInclude Include="..\..\..\..\Zv3DCore\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DDebugUtils.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DError.cpp" />
+    <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DStringUtils.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Memory\Zv3DSimpleMemoryAllocator.cpp" />
     <ClCompile Include="..\..\..\..\src\Core\Test\Zv3DTestUtils.cpp" />
-    <ClCompile Include="..\..\..\..\Zv3DCore\stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

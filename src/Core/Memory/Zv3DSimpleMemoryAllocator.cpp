@@ -7,7 +7,6 @@
 	23-Dec-2022	grv creation.
 */
 
-#include "stdafx.h"
 #include "Core/Memory/Zv3DSimpleMemoryAllocator.h"
 #include "Core/Common/Zv3DAssert.h"
 #include <cstdlib>

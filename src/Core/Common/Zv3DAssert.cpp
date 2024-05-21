@@ -6,7 +6,7 @@
 /*
 	23-Dec-2022	grv creation.
 */
-#include "stdafx.h"
+
 #include "Core/Common/Zv3DAssert.h"
 
 #ifndef ZVD_USE_TEMPLATE_ARGS_FOR_PRINT

@@ -54,7 +54,14 @@ typedef ZvdUInt16_t ZvdWord_t;
 typedef ZvdUInt32_t ZvdIndex_t;
 /// 32-bit size type.
 typedef ZvdUInt32_t ZvdSize_t;
-
+//
+using ZvdPtrDiff_t = decltype(static_cast<ZvdInt32_t*>(nullptr) - static_cast<ZvdInt32_t*>(nullptr));
 const ZvdIndex_t kZVD_NO_INDEX = ZvdIndex_t(-1);
 
+namespace zvd
+{
+	using Byte_t = ZvdByte_t;
+	using Size_t = ZvdSize_t;
+	using PtrDiff_t = ZvdPtrDiff_t;
+} // end of zvd
 #endif // ZV3D_CORE_COMMON_INTDEFS_H

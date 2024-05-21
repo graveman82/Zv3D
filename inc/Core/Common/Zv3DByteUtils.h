@@ -93,4 +93,16 @@
 #	define ZVD_SWORD7(x)   ZVD_SWORDn(x,  7)
 #endif // BE/LE
 
+
+template <typename T>
+inline ZvdByte_t* ZvdCastToBytePtr(T* p)
+{
+	return reinterpret_cast<ZvdByte_t*>(p);
+}
+
+template <typename T>
+inline const ZvdByte_t* ZvdCastToBytePtr(const T* p)
+{
+	return reinterpret_cast<const ZvdByte_t*>(p);
+}
 #endif // ZV3D_CORE_COMMON_BYTEUTILS_H

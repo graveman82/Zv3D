@@ -6,7 +6,7 @@
 /*
 	23-Dec-2022	grv creation.
 */
-#include "stdafx.h"
+
 #include "Core/Common/Zv3DAssert.h"
 
 #include <iostream>
