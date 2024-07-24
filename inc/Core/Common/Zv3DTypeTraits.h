@@ -123,21 +123,35 @@ public:
 		TIterator
 	>::type;
 
-	
 	static inline constexpr iterator_type
 	make(TIterator it)
 	{
 		return iterator_type(it);
 	}
+};
 
-	template<typename T, typename TReturnType
-		= typename std::conditional<Condition<T>::value,
+template<typename T>
+struct ZvdMakeMoveIteratorIfNoExcept<T*>
+{
+private:
+	
+	using UnderlyingValueType = T;
+
+	template <typename U>
+	using Condition = ZvdIsNoThrowMoveOrIsNotCopyConstructible_t<U>;
+
+public:
+
+	using iterator_type = typename std::conditional<
+		Condition<UnderlyingValueType>::value,
 		std::move_iterator<T*>,
-		const T*>::type>
-	static inline constexpr TReturnType
-	make(T* p)
+		const T*
+	>::type;
+
+	static inline constexpr iterator_type
+		make(T* p)
 	{
-		return TReturnType(p);
+		return iterator_type(p);
 	}
 };
 
