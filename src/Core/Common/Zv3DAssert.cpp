@@ -11,6 +11,7 @@
 
 #ifndef ZVD_USE_TEMPLATE_ARGS_FOR_PRINT
 #   include <cstdarg>
+#   include <cstdio>
 #else
 #   error "Feature is not implemented yet"
 #endif
@@ -90,7 +91,7 @@ namespace zvd
 #   endif
 
 #else
-                nBufSize = _vsnprintf(p, nBufSize, fmt, args);
+                nBufSize = std::vsnprintf(p, nBufSize, fmt, args);
 #endif
                 va_end(args);
 

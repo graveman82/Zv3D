@@ -37,4 +37,56 @@
 #   endif
 #endif // end of compiler detection
 
+
+//-----------------------------------------------------------------------------
+// C++ standard detection
+
+// In Visual Studio add:
+// /Zc:__cplusplus
+// in project command line additional parameters field
+// https://learn.microsoft.com/en-us/cpp/build/reference/zc-cplusplus?view=msvc-170
+#if (__cplusplus==202302L)
+#   define ZVD_CPP __cplusplus
+#   define ZVD_CPP23 __cplusplus
+#   define ZVD_CPP20 202002L
+#   define ZVD_CPP17 201703L
+#   define ZVD_CPP14 201402L
+#   define ZVD_CPP11 201103L
+#   define ZVD_CPP03 199711L
+
+#elif(__cplusplus == 202002L)
+#   define ZVD_CPP __cplusplus
+#   define ZVD_CPP20 __cplusplus
+#   define ZVD_CPP17 201703L
+#   define ZVD_CPP14 201402L
+#   define ZVD_CPP11 201103L
+#   define ZVD_CPP03 199711L
+
+#elif(__cplusplus == 201703L)
+#   define ZVD_CPP __cplusplus
+#   define ZVD_CPP17 __cplusplus
+#   define ZVD_CPP14 201402L
+#   define ZVD_CPP11 201103L
+#   define ZVD_CPP03 199711L
+
+#elif(__cplusplus == 201402L)
+#   define ZVD_CPP __cplusplus
+#   define ZVD_CPP14 __cplusplus
+#   define ZVD_CPP11 201103L
+#   define ZVD_CPP03 199711L
+
+#elif(__cplusplus == 201103L)
+#   define ZVD_CPP11 __cplusplus
+#   define ZVD_CPP03 199711L
+
+#elif(__cplusplus == 199711L)
+#   define ZVD_CPP __cplusplus
+#   define ZVD_CPP03 __cplusplus
+
+#endif // C++ standard detection end
+
+#ifndef ZVD_CPP
+#   error "No required C++ standard is supported by current compiler!"
+#endif
+
 #endif // ZV3D_CORE_COMMON_COMPILER_H

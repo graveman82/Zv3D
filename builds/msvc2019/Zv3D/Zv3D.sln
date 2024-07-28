@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zv3DCoreStaticLib", "Zv3DCoreStaticLib\Zv3DCoreStaticLib.vcxproj", "{8686821D-3CF3-465D-8506-588F8B861431}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Samples", "Samples\Samples.vcxproj", "{11AC414F-3341-4B1D-9B8D-2207CC128EC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8686821D-3CF3-465D-8506-588F8B861431} = {8686821D-3CF3-465D-8506-588F8B861431}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RnDTests", "RnDTests\RnDTests.vcxproj", "{41BDBC05-741D-47C0-B63D-486DB81DC50F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +36,14 @@ Global
 		{11AC414F-3341-4B1D-9B8D-2207CC128EC0}.Release|x64.Build.0 = Release|x64
 		{11AC414F-3341-4B1D-9B8D-2207CC128EC0}.Release|x86.ActiveCfg = Release|Win32
 		{11AC414F-3341-4B1D-9B8D-2207CC128EC0}.Release|x86.Build.0 = Release|Win32
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Debug|x64.ActiveCfg = Debug|x64
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Debug|x64.Build.0 = Debug|x64
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Debug|x86.ActiveCfg = Debug|Win32
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Debug|x86.Build.0 = Debug|Win32
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Release|x64.ActiveCfg = Release|x64
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Release|x64.Build.0 = Release|x64
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Release|x86.ActiveCfg = Release|Win32
+		{41BDBC05-741D-47C0-B63D-486DB81DC50F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -128,12 +128,16 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <OutputFile>$(ProjectDir)..\..\..\..\lib\$(TargetName)_$(Configuration)$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -158,14 +162,18 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DAssert.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DBaseTypes.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DByteUtils.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DCommonUtils.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DCompiler.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DDebugUtils.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DError.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DIntDefs.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DIterator.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DMemory.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DPlatform.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStaticSingleton.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringify.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringUtils.h" />
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DTypeTraits.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DDynamicArray.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DPodDynamicArray.h" />
     <ClInclude Include="..\..\..\..\inc\Core\Containers\Zv3DString.h" />

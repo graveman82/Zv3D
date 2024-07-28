@@ -60,6 +60,10 @@ const ZvdIndex_t kZVD_NO_INDEX = ZvdIndex_t(-1);
 
 namespace zvd
 {
+	using Int8_t = ZvdInt8_t;
+	using Int16_t = ZvdInt16_t;
+	using Int32_t = ZvdInt32_t;
+
 	using Byte_t = ZvdByte_t;
 	using Size_t = ZvdSize_t;
 	using PtrDiff_t = ZvdPtrDiff_t;

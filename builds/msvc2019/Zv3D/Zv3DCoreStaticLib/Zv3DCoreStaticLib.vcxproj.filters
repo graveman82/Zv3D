@@ -114,6 +114,18 @@
     <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DStringUtils.h">
       <Filter>Header Files\Core\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DTypeTraits.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DIterator.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DMemory.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Core\Common\Zv3DCommonUtils.h">
+      <Filter>Header Files\Core\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\Core\Common\Zv3DAssert.cpp">
