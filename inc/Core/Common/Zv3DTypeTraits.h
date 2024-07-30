@@ -44,7 +44,7 @@ namespace zvd
 
 #ifdef ZVD_CPP17
 template<bool VBool>
-using ZvdBoolConstant_t = bool_constant<VBool>;
+using ZvdBoolConstant_t = std::bool_constant<VBool>;
 #else
 template<bool VBool>
 using ZvdBoolConstant_t = std::integral_constant<bool, VBool>;
