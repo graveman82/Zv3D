@@ -12,6 +12,8 @@
 
 #include "Core/Common/Zv3DPlatform.h"
 
+#include <limits>
+
 //-----------------------------------------------------------------------------
 // Fixed size integers.
 #if defined (ZVD_COMPILER_MSVC)
@@ -42,6 +44,37 @@
 #	endif
 
 #endif // msvc
+
+template <typename T>
+inline constexpr T ZvdGetMaxNumber();
+
+template <>
+inline constexpr ZvdUInt8_t ZvdGetMaxNumber<ZvdUInt8_t>()
+{
+	return (sizeof(ZvdUInt8_t) == sizeof(unsigned char)) ?
+		std::numeric_limits<unsigned char>::max()
+		: 255u;
+}
+
+template <>
+inline constexpr ZvdUInt16_t ZvdGetMaxNumber<ZvdUInt16_t>()
+{
+	return (sizeof(ZvdUInt16_t) == sizeof(unsigned short)) ? 
+		std::numeric_limits<unsigned short>::max()
+		: 65535u;
+}
+
+template <>
+inline constexpr ZvdUInt32_t ZvdGetMaxNumber<ZvdUInt32_t>()
+{
+	return (sizeof(ZvdUInt32_t) == sizeof(unsigned long)) ?
+		std::numeric_limits<unsigned long>::max()
+		: 4294967295u;
+}
+
+const ZvdUInt8_t	kZVD_UINT8_MAX	= ZvdGetMaxNumber<ZvdUInt8_t>();
+const ZvdUInt16_t	kZVD_UINT16_MAX = ZvdGetMaxNumber<ZvdUInt16_t>();
+const ZvdUInt32_t	kZVD_UINT32_MAX = ZvdGetMaxNumber<ZvdUInt32_t>();
 
 //-----------------------------------------------------------------------------
 /* Compiler-independent definitions.

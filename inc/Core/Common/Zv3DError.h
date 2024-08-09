@@ -78,6 +78,7 @@ public:
 	{
 		kSuccess,
 		kInvalidArg,
+		kInvalidUsage,
 		kNoMemory,
 		kOutOfRange,
 		kCount
@@ -99,7 +100,7 @@ public:
 	ZvdErrorCategory_t Category() const;
 	ZvdErrorList_t::Code Code() const;
 
-	
+	static ZvdErrorInfo_t Ok();
 private:
 	static void Format(ZvdRetVal_t& retVal, ZvdResultStatus_t status, ZvdErrorCategory_t cat, ZvdErrorList_t::Code code);
 	ZvdRetVal_t m_retVal;

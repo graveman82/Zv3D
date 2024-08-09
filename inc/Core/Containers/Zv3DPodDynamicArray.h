@@ -24,13 +24,58 @@
 //-----------------------------------------------------------------------------
 template<
 	typename T,
-	typename TAllocator = std::allocator<T>
+	typename TMemoryAllocator = std::allocator<T>
 >
 class ZvdPodDynamicArray_t
 {
 public:
 	using size_type = ZvdSize_t;
+
+	ZvdRetVal_t reserve(size_type nNewCap)
+	{
+		if (nNewCap <= m_nCapacity)
+			return ZvdErrorInfo_t::Ok().RetVal();
+
+		nNewCap = std::max(nNewCap, calculateCapacity(m_nCount));
+
+		if (0 == m_nCapacity)
+		{
+			void* p{};
+			ZvdErrorInfo_t errorInfo(TMemoryAllocator::allocate(sizeof(T) * nNewCap, &p));
+			if (errorInfo.Status() != kZvdOk)
+			{
+				return errorInfo.RetVal();
+			}
+
+			m_pElements = reinterpret_cast<T*>(p);
+			m_nCapacity = nNewCap;
+			return ZvdErrorInfo_t::Ok().RetVal();
+		}
+		
+		// capacity() > 0
+		void* p{};
+		ZvdErrorInfo_t errorInfo(TMemoryAllocator::reallocate(m_pElements, sizeof(T) * nNewCap, &p));
+		if (errorInfo.Status() != kZvdOk)
+		{
+			return errorInfo.RetVal();
+		}
+
+		m_pElements = reinterpret_cast<T*>(p);
+		m_nCapacity = nNewCap;
+		return ZvdErrorInfo_t::Ok().RetVal();
+	}
 private:
+	size_type calculateCapacity(size_type nCount)
+	{
+		size_type nCap = 8;
+		while (nCap < nCount)
+		{
+			nCap += (nCap >> 1);
+		}
+		
+		return nCap;
+	}
+
 	T* m_pElements{};
 	size_type m_nCount{};
 	size_type m_nCapacity{};

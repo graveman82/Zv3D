@@ -158,3 +158,9 @@ ZvdErrorList_t::Code ZvdErrorInfo_t::Code() const
 {
 	return static_cast<ZvdErrorList_t::Code>(ZVD_WORD1(m_retVal));
 }
+
+//-----------------------------------------------------------------------------
+ZvdErrorInfo_t ZvdErrorInfo_t::Ok()
+{
+	return ZvdErrorInfo_t(kZvdOk, ZvdErrorCategory_t::kCore, ZvdErrorList_t::kSuccess);
+}
